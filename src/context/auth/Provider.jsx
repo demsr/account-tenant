@@ -15,7 +15,7 @@ export const Provider = ({ children, appId }) => {
     if (token) {
       axios
         .post(
-          "http://localhost:4000/auth/accesstoken",
+          "http://localhost:4010/accesstoken",
           { token: token },
           { withCredentials: true }
         )
@@ -39,7 +39,7 @@ export const Provider = ({ children, appId }) => {
 
   const refreshToken = async () => {
     return await axios
-      .get("http://localhost:4000/auth/refresh", { withCredentials: true })
+      .get("http://localhost:4010/refresh", { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         setJWT(res.data.jwt);

@@ -12,19 +12,12 @@ export const Page = () => {
   useEffect(() => {
     const getMe = async () => {
       let _me = await callEndpoint(
-        "http://localhost:4000/api/user/612a6de0bbecf4b22bbe6dad"
+        "http://localhost:4010/api/user/612a6de0bbecf4b22bbe6dad"
       );
 
       setMe(_me);
     };
-    getMe();
   }, []);
-
-  useEffect(() => {
-    axios.get("http://localhost:4000/login", {
-      withCredentials: true,
-    });
-  });
 
   return (
     <div>
